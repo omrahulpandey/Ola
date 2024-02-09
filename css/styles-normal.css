@@ -1,0 +1,615 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Times New Roman", Times, serif;
+  }
+
+body {
+    font-size: 18px; 
+  }
+  
+/* Navbar styles */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 200px;
+    background: #156110;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.nav .logo img {
+    margin: 5px;
+    width: 78%;
+    height: auto;
+    max-width: 100px;
+    display: block;
+  }
+  
+.nav,
+.nav .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+.nav .nav-links {
+    column-gap: 20px;
+    list-style: none;
+  }
+  
+.nav .nav-links a {
+    transition: all 0.2s linear;
+  }
+  
+.nav.openSearch .nav-links a {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+.nav .search-icon {
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+.nav .search-box {
+    position: absolute;
+    right: 250px;
+    height: 45px;
+    max-width: 555px;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s linear;
+  }
+  
+.nav.openSearch .search-box {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+.search-box .search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    left: 15px;
+    color: #4a98f7;
+    transform: translateY(-50%);
+  }
+  
+.search-box input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    background-color: #fff;
+    padding: 0 15px 0 45px;
+  }
+  
+.nav .navOpenBtn,
+.nav .navCloseBtn {
+    display: none;
+  }
+
+  /* Slideshow Styles */
+.slideshow-container {
+    max-width: 80%;
+    position: relative;
+    margin-top: 80px;
+    margin-left: 10%;
+    margin-right: 10%;
+    z-index: 0;
+  }
+
+.mySlides {
+    display: none;
+  }
+  
+.fade {
+    animation: fade 2s ease-in-out infinite;
+  }
+  
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+  }
+  
+.next {
+    right: 0;
+  }
+  
+.prev:hover,
+.next:hover {
+    background-color: #2e6bb5;
+  }
+  
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+  }
+  
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+.active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* Adjust dot position */
+.dots-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Additional styles for Click Me button */
+.image-container {
+    position: relative;
+  }
+  
+.responsive-image {
+    width: 100%;
+    height: auto;
+  }
+  
+.imageButton {
+    position: absolute;
+    bottom: 2em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12vw;
+    padding: 0.4em;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 1.3vw;
+  }
+  
+/* Add these styles for the new sections */
+.welcome {
+    background-color: #fff;
+    max-width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    display: flex; /* Added */
+    justify-content: space-between; /* Added */
+    border-radius: 10px;
+    //box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+.presence {
+    background-color: #fff;
+    max-width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    display: flex; /* Added */
+    justify-content: space-between; /* Added */
+    border-radius: 10px;
+    //box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+.welsec {
+    max-width: 69%; /* Added */
+  }
+  
+.presec {
+    max-width: 69%;
+  }
+  
+.presence h3,
+.presence p {
+    max-width: 100%; /* Added */
+  }
+  
+.welcome h3,
+.welcome p {
+    max-width: 99%; /* Added */
+  }
+  
+  
+.welcome img {
+    max-width: 31%;
+    height:auto; /* Added */
+    border-radius: 20px; /* Added for a rounded corner effect */
+  }
+  
+.presence img {
+    max-width: 31%;
+    height:auto; /* Added */
+    border-radius: 20px; /* Added for a rounded corner effect */
+  }
+.mission,
+.choose,
+.contact-section {
+    max-width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    //box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+.welcome h3,
+.presence h3,
+.mission h3,
+.choose h3,
+.review h3,
+.contact-section h3 {
+    color: #3989eb;
+    font-size: 30px;
+  }
+  
+.welcome p,
+.presence p,
+.mission p,
+.choose p {
+    line-height: 1.6;
+  }
+  
+.contact-section p {
+    margin-bottom: 20px;
+  }
+  
+.contact-section .cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+.contact-section .cta-button:hover {
+    background-color: #fff;
+  }
+  
+/* Additional styles for the "Read More" link */
+.paragraph  {
+    max-height: none; /* Set the maximum height to show two lines initially */
+    overflow: hidden;
+  }
+  
+.presec {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+  }
+  
+.paragraph a {
+    color: #ed700c; /* Replace with your desired green color code */
+  }
+  
+  /* Adjust the Swiper container position */
+.swiper-container {
+    position: relative;
+  }
+  
+  /* Position the pagination below the slides */
+.swiper-pagination {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Style for active slide pagination */
+.swiper-pagination-bullet-active {
+    background-color: #156110; /* Set the active bullet color */
+  }
+  
+  /* Add transition effect for pagination */
+.swiper-pagination {
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect for pagination */
+.swiper-pagination:hover {
+    background-color: none; /* Set the hover background color */
+  }
+  
+#review {
+    background-color: #fff;
+    max-width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    //box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Add this to hide overflowing content */
+  }
+  
+#review h2 {
+    color: #3989eb;
+  }
+  
+.swiper-container {
+    margin-top: 20px;
+    overflow: hidden;
+    width: 100%; /* Add this to hide overflowing content */
+  }
+  
+.customer-review {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Add this to hide overflowing content */
+  }
+  
+.customer-review img {
+    max-width: 100px; /* Adjust the maximum width for the avatar */
+    border-radius: 50%;
+    margin-bottom: 10px; /* Add margin at the bottom of the avatar */
+  }
+  
+.customer-review h3 {
+    font-size: 18px;
+    color: #333;
+  }
+  
+.customer-review p {
+    line-height: 1.6;
+    margin-bottom: 10px; /* Add margin at the bottom of the review text */
+  }
+  
+.rating {
+    font-size: 20px;
+    color: #f39c12;
+    margin-top: 10px; /* Add margin at the top of the rating */
+  }
+  
+
+ /* New contact section */ 
+/* Add the following styles to your existing CSS */
+
+.contact-section {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+.contact-info {
+    flex: 1;
+  }
+  
+  /* Adjust the width and margin as needed */
+.address {
+    width: 57%;
+    margin-right: 20px; /* Adjust as needed */
+    padding: 10px;
+  }
+
+.address p {
+    margin-top:3px;
+    margin-bottom: 3px; /* Adjust the value as per your preference */
+  }  
+
+.social-links {
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px; /* Adjust as needed */
+  }
+  
+.social-links a {
+    display: inline-block;
+    padding: 5px;
+    margin-right: 15px; /* Adjust the spacing between social icons */
+  }
+  
+.social-links img {
+    width: 50px; /* Adjust the size of the social icons */
+    height: 50px; /* Adjust the size of the social icons */
+    border-radius: 25%; /* Make the icons circular */
+    transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+  }
+  
+.social-links a:hover img {
+    transform: scale(1.2); /* Add a zoom effect on hover */
+  }  
+  
+.map-container {
+    width: 50%;
+    flex:2;
+  }
+  
+/* Add the following styles to your existing CSS */
+
+footer {
+    background-color: #f8f8f8; /* Set a background color */
+    padding: 20px; /* Add some padding for spacing */
+    text-align: center; /* Center the text */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  /* Optionally, you can style the copyright text */
+footer p {
+    margin: 0; /* Remove default margin */
+    font-size: 14px; /* Adjust the font size */
+    color: #333; /* Set the text color */
+  }
+  
+
+  #quoteFormContainer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  #quoteForm {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Style required form fields with red asterisk */
+  .form-group.required {
+    position: relative;
+  }
+
+  .form-group.required::after {
+    content: "*";
+    color: red;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 5px;
+    margin-right: 5px;
+  }
+  
+  #closeFormButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  .form-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .form-columns {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+
+  .logo-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .logo-column img {
+    max-width: 80%; /* Adjust as needed */
+    height: auto;
+  }
+  
+  .form-column {
+    padding: 10px;
+    flex: 1;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 2px;
+  }
+  
+  .form-column h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+
+ #requirement{
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+
+#message{
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+  
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0px 0px;
+    width:45%;
+    height:28px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size:16px;
+    margin-bottom:10px;
+  }
+  
+  #quoteConfirmation {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #4CAF50;
+  }
+/* Responsive Styles for Smaller Screens */
+
