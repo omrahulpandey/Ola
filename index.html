@@ -22,42 +22,60 @@
 
 <h2>Text input fields</h2>
 
-<div class="form-column">
-   <form id="my-form" method="POST" action="https://script.google.com/macros/s/AKfycbznVCT3XnqrB52g7k9MbMzGI_XnEhFxc2w_gT6f40GfQ860mdXpY0f1cjSLKuxP4luGtg/exec"> 
-      <!-- <div  > -->
-        <input class="form-group" type="text" name="Name" placeholder="Name*">
-      <!-- </div> -->
-      <!-- <div  > -->
-        <input class="form-group" type="tel" name="mobileNumber" pattern="[0-9]{10}" placeholder="Mobile Number*">
-      <!-- </div> -->
-      <!-- <div > -->
-        <input class="form-group" type="email" name="email" placeholder="Email">
-      <!-- </div> -->
-      <!-- <div  > -->
-        <input class="form-group" type="text" name="location" placeholder= "Location*" required>
-      <!-- </div> -->
-      <!-- <div  > -->
-        <input class="form-group" type="number" name="budget" placeholder="Budget (&#8377;)*" required>
-      <!-- </div> -->
-      <!-- <div  > -->
-        <select class="form-group" id="requirement" name="requirement" placeholder="Requirement*" onchange="toggleOtherField()" required>
-          <option value="Atta Chhaki(Flour Mill)">Atta Chhaki(Flour Mill)</option>
-          <option value="Ice Cream Factory">Ice Cream Factory</option>
-          <option value="Educational Institute">Educational Institute</option>
-          <option value="Commercial Complex">Commercial Complex</option>
-          <option value="Home">Home</option>
-          <option value="Others">Others</option>
-        </select>
-        <input class="form-group" type="text" id="otherRequirement" name="otherRequirement" style="display: none;" placeholder="Please Specify*">
-      <!-- </div> -->
-      <!-- <div class="form-group"> -->
-        <textarea class="form-group" id="message" name="message" placeholder="Any Message?"></textarea>
-      <!-- </div> -->
-      <button id="submit" type="submit">Send</button>
-      </form>
-    <p id="quoteConfirmation"></p>
-</div>  
-
+<!-- Pop-up form container -->
+<div id="quoteFormContainer">
+    <div id="quoteForm">
+      <span id="closeFormButton" onclick="closeQuoteForm()">&times;</span>
+      <div class="form-content">
+        <div class="centered-text">
+          <h2>Get a Quote</h2>
+        </div>
+        <div class="form-columns">
+          <div class="logo-column">
+            <!-- Logo of the company goes here -->
+            <img src="images/logo2.png" alt="Company Logo">
+          </div>
+          <div class="form-column">
+            <form id="my-form" method="POST" action="https://script.google.com/macros/s/AKfycbznVCT3XnqrB52g7k9MbMzGI_XnEhFxc2w_gT6f40GfQ860mdXpY0f1cjSLKuxP4luGtg/exec"> 
+               <!-- <div  > -->
+                 <input class="form-group" type="text" name="Name" placeholder="Name*">
+               <!-- </div> -->
+               <!-- <div  > -->
+                 <input class="form-group" type="tel" name="mobileNumber" pattern="[0-9]{10}" placeholder="Mobile Number*">
+               <!-- </div> -->
+               <!-- <div > -->
+                 <input class="form-group" type="email" name="email" placeholder="Email">
+               <!-- </div> -->
+               <!-- <div  > -->
+                 <input class="form-group" type="text" name="location" placeholder= "Location*" required>
+               <!-- </div> -->
+               <!-- <div  > -->
+                 <input class="form-group" type="number" name="budget" placeholder="Budget (&#8377;)*" required>
+               <!-- </div> -->
+               <!-- <div  > -->
+                 <select class="form-group" id="requirement" name="requirement" placeholder="Requirement*" onchange="toggleOtherField()" required>
+                   <option value="Atta Chhaki(Flour Mill)">Atta Chhaki(Flour Mill)</option>
+                   <option value="Ice Cream Factory">Ice Cream Factory</option>
+                   <option value="Educational Institute">Educational Institute</option>
+                   <option value="Commercial Complex">Commercial Complex</option>
+                   <option value="Home">Home</option>
+                   <option value="Others">Others</option>
+                 </select>
+                 <input class="form-group" type="text" id="otherRequirement" name="otherRequirement" style="display: none;" placeholder="Please Specify*">
+               <!-- </div> -->
+               <!-- <div class="form-group"> -->
+                 <textarea class="form-group" id="message" name="message" placeholder="Any Message?"></textarea>
+               <!-- </div> -->
+               <button id="submit" type="submit">Send</button>
+               </form>
+             <p id="quoteConfirmation"></p>
+         </div>  
+        </div>
+      </div>
+    </div>
+    </div>
+    <script src="trial.js"></script>
+    
 
 <p>Note that the form itself is not visible.</p>
 
